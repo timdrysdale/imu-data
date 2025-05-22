@@ -14,6 +14,7 @@ GPS data from phone. Phone in trouser pocket (substantially diagonally oriented,
 IMU data from IMU unit on helmet (Y upwards, tilted back)
 IMU data from IMU unit on bike (Z upwards, tilted back)
 
+
 ![orientations](./img/set01.jpg)
 
 At the very end of the data set, there are two periods of temporary parking with the rider looking straight ahead. The last one is on an almost flat road, and could be used for finding the stationary position of the IMU units on the helmet and bike.
@@ -32,7 +33,7 @@ The timestamps in the IMU data appear to have an issue, where it seems the data 
 80    00:16:31.218    0.259    0.305    0.987    32.898    33.569    49.866    6.95    -1.32    128.80    2221    -489    -755    60    0.000000    0.000000    0    0    0
 ```
 
-## Trimming
+### Trimming
 
 `sed` was be used to trim lines from the data files to achieve alignment in time.
 
@@ -48,6 +49,7 @@ and for removing the last unneeded lines
 tac bike.csv | sed '1,4764d' | tac  > bike.csv
 ```
 
+## Set 02
 
-
+GPS and IMU data from a [racebox micro](https://www.racebox.pro/products/racebox-micro) mounted on a bike running at a track. This is an example of the data available from this device, for consideration of whether it could be helmet mounted.
 
